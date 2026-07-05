@@ -1,0 +1,5 @@
+Go is an open source programming language.
+Go 是一门开源编程语言。
+Go is simple, reliable, and efficient.
+学习 Go 标准库很有帮助。
+Go go go!

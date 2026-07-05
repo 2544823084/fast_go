@@ -82,7 +82,12 @@ func runConfig(args []string) {
 		fs.Usage()
 		os.Exit(1)
 	}
-	fmt.Printf("config: file=%s\n", *file)
+	cfg, err := loadConfig(*file)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "错误: %v\n", err)
+		os.Exit(1)
+	}
+	printConfig(cfg)
 }
 
 func runFetch(args []string) {
@@ -100,7 +105,10 @@ func runFetch(args []string) {
 		fs.Usage()
 		os.Exit(1)
 	}
-	fmt.Printf("fetch: config=%s\n", *config)
+	if err := fetchFromConfig(*config); err != nil {
+		fmt.Fprintf(os.Stderr, "错误: %v\n", err)
+		os.Exit(1)
+	}
 }
 
 func runBatch(args []string) {
@@ -119,5 +127,8 @@ func runBatch(args []string) {
 		fs.Usage()
 		os.Exit(1)
 	}
-	fmt.Printf("batch: file=%s timeout=%ds\n", *file, *timeout)
+	if err := runBatchFetch(*file, *timeout); err != nil {
+		fmt.Fprintf(os.Stderr, "错误: %v\n", err)
+		os.Exit(1)
+	}
 }

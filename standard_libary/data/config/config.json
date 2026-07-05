@@ -1,0 +1,6 @@
+{
+  "url": "https://example.com",
+  "timeout_seconds": 3,
+  "output": "./data/fetch/response.txt",
+  "log_level": "info"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://httpbin.org/status/404",
+  "timeout_seconds": 5,
+  "output": "./data/fetch/error.txt",
+  "log_level": "info"
+}

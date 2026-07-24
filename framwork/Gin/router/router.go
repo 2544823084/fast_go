@@ -23,7 +23,7 @@ func Setup() *gin.Engine {
 	r.POST("/file/upload", internal.UploadFile)
 	r.POST("/file/download", internal.DownloadFile)
 	r.POST("/file/delete", internal.DeleteFile)
-	r.GET("/file/list", internal.GetFileList)
+	r.POST("/file/list", internal.GetFileList)
 
 	return r
 }
